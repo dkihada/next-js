@@ -4,15 +4,7 @@ import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
 
 function Home({ menu }: HomeProps): JSX.Element {
-	return (
-		<>
-			<ul>
-				{menu.map((m) => (
-					<li key={m._id.secondCategory}>{m._id.secondCategory}</li>
-				))}
-			</ul>
-		</>
-	);
+	return <></>;
 }
 
 export default withLayout(Home);
