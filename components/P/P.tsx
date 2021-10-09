@@ -1,6 +1,6 @@
 import { PProps } from './P.props';
 import styles from './P.module.css';
-import cn from 'classnames';
+const cn = require('classnames');
 
 export const P = ({
 	size = 'm',

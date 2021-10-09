@@ -1,10 +1,10 @@
 import { LayoutProps } from './Layout.props';
 import styles from './Layout.module.css';
-import cn from 'classnames';
 import { Sidebar } from './Sidebar/Sidebar';
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
 import { FunctionComponent } from 'react';
+const cn = require('classnames');
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (

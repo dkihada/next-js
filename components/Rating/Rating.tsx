@@ -1,8 +1,8 @@
 import { RatingProps } from './Rating.props';
 import styles from './Rating.module.css';
-import cn from 'classnames';
 import StarIcon from './star.svg';
 import { useEffect, useState, KeyboardEvent } from 'react';
+const cn = require('classnames');
 
 export const Rating = ({
 	isEditable = false,
