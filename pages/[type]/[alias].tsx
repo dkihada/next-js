@@ -6,12 +6,26 @@ import { PageLevelCategory, PageModel } from '../../interfaces/page.interface';
 import { ParsedUrlQuery } from 'querystring';
 import { ProductModel } from '../../interfaces/product.interface';
 import { firstLevelMenu } from '../../helpers/helpers';
+import { BrainPageComponent } from '../../page-components';
 
-function Course({ menu, page, products }: CourseProps): JSX.Element {
-	return <>{products && products.length}</>;
+function BrainPage({
+	firstCategory,
+	page,
+	products,
+}: BrainPageProps): JSX.Element {
+	return (
+		<>
+			{' '}
+			<BrainPageComponent
+				firstCategory={firstCategory}
+				page={page}
+				products={products}
+			/>{' '}
+		</>
+	);
 }
 
-export default withLayout(Course);
+export default withLayout(BrainPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	let paths: string[] = [];
@@ -32,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	};
 };
 
-export const getStaticProps: GetStaticProps<CourseProps> = async ({
+export const getStaticProps: GetStaticProps<BrainPageProps> = async ({
 	params,
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
 	if (!params) {
@@ -88,7 +102,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
 	}
 };
 
-interface CourseProps extends Record<string, unknown> {
+interface BrainPageProps extends Record<string, unknown> {
 	menu: MenuItem[];
 	firstCategory: PageLevelCategory;
 	page: PageModel;
