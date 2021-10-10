@@ -3,6 +3,7 @@ import { BrainPageComponentProps } from './BrainPageComponent.props';
 import styles from './BrainPageComponent.module.css';
 import { PageLevelCategory } from '../../interfaces/page.interface';
 import { Advantages } from '../../components/Advantages/Advantages';
+import parse from 'html-react-parser';
 
 export const BrainPageComponent = ({
 	page,
@@ -40,7 +41,7 @@ export const BrainPageComponent = ({
 					<Advantages advantages={page.advantages} />
 				</>
 			)}
-			{page.seoText && <P>{page.seoText}</P>}
+			{page.seoText && <div className={styles.seo}> {parse(page.seoText)}</div>}
 			<Htag tag='h2'>Получаемые навыки</Htag>
 			{page.tags.map((t) => (
 				<Tag color='primary' key={t}>
