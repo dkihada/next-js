@@ -1,7 +1,8 @@
-import { HhData, Htag, Tag } from '../../components';
+import { HhData, Htag, P, Tag } from '../../components';
 import { BrainPageComponentProps } from './BrainPageComponent.props';
 import styles from './BrainPageComponent.module.css';
 import { PageLevelCategory } from '../../interfaces/page.interface';
+import { Advantages } from '../../components/Advantages/Advantages';
 
 export const BrainPageComponent = ({
 	page,
@@ -28,9 +29,24 @@ export const BrainPageComponent = ({
 					hh.ru
 				</Tag>
 			</div>
-			<div className={styles.hh}>
-				{firstCategory == PageLevelCategory.Courses && <HhData {...page.hh} />}
-			</div>
+			{firstCategory == PageLevelCategory.Courses && page.hh && (
+				<HhData {...page.hh} />
+			)}
+			{page.advantages && page.advantages.length > 0 && (
+				<>
+					<div className={styles.advantagesTitle}>
+						<Htag tag='h2'>Преимущества</Htag>
+					</div>
+					<Advantages advantages={page.advantages} />
+				</>
+			)}
+			{page.seoText && <P>{page.seoText}</P>}
+			<Htag tag='h2'>Получаемые навыки</Htag>
+			{page.tags.map((t) => (
+				<Tag color='primary' key={t}>
+					{t}
+				</Tag>
+			))}
 		</div>
 	);
 };

@@ -1,7 +1,7 @@
 .wrapper {
 	display: grid;
 	grid-template-columns: auto 230px minmax(320px, 1200px) auto;
-	gap: 0 30px;
+	gap: 40px 30px;
 
 	min-height: 100vh;
 	grid-template-rows: auto 1fr auto;
@@ -30,6 +30,10 @@
 }
 
 @media (max-width: 765px) {
+	.body {
+		padding: 15px;
+	}
+
 	.wrapper {
 		grid-template-columns: minmax(320px, 1fr);
 		grid-template-areas:
