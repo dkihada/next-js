@@ -31,3 +31,12 @@ export const firstLevelMenu: FirstLevelMenuItem[] = [
 		id: PageLevelCategory.Products,
 	},
 ];
+
+export const priceRu = (price: number): string =>
+	price
+		.toString()
+		.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+		.concat(' ₽');
+
+export const numSpace = (num: number): string =>
+	num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
