@@ -49,3 +49,11 @@
 	font-weight: 600;
 	line-height: 27px;
 }
+
+.title h1 {
+	margin-bottom: 20px;
+}
+
+.title div {
+	align-self: baseline;
+}
