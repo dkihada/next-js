@@ -9,8 +9,9 @@ export interface ProductModel {
 	price: number;
 	credit: number;
 	oldPrice: number;
-	characteristics: ProdcutCharacteristic[];
+	characteristics: ProductCharacteristic[];
 	advantages?: string;
+	disadvantages?: string;
 	initialRating: number;
 	createdAt: Date;
 	updatedAt: Date;
@@ -21,7 +22,7 @@ export interface ProductModel {
 	reviewAvg: number;
 }
 
-export interface ProdcutCharacteristic {
+export interface ProductCharacteristic {
 	value: string;
 	name: string;
 }
